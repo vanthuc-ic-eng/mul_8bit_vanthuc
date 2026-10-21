@@ -1,0 +1,27 @@
+# 1. Đọc các file Verilog
+read_verilog <...>.v
+read_verilog <...>.v
+
+
+# 2. Tổng hợp High-level
+synth -top <...> -flatten
+
+# 3. Tối ưu hóa
+opt -purge
+opt
+
+# 4. Map sang thư viện Nangate45 
+# Map Flip-Flop
+dfflibmap -liberty normal.lib
+
+# Map các cổng Logic (ABC)
+abc -liberty normal.lib
+
+# 5. Dọn dẹp
+clean
+
+# 6. --- BÁO CÁO DIỆN TÍCH ---
+tee -o area_report.txt stat -liberty normal.lib
+
+# 7. Xuất file netlist
+write_verilog -noattr <...>.v

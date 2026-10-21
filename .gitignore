@@ -1,0 +1,20 @@
+# Generated products (never commit PPA reports without provenance)
+build/*
+!build/.gitkeep
+reports/*
+!reports/.gitkeep
+.Xil/
+.xil/
+*.jou
+*.log
+*.dcp
+*.pb
+*.wdb
+*.vcd
+*.vvp
+*.pyc
+__pycache__/
+.cache/
+core
+core.*
+.DS_Store

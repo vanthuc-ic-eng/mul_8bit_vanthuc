@@ -1,0 +1,15 @@
+{
+  "configuration": "lutalm_mul_s8 LOW_W=3",
+  "cases": 65536,
+  "incorrect_cases": 63785,
+  "error_rate_percent": 97.32818603515625,
+  "MED": 105.55633544921875,
+  "MRED_percent_excluding_zero_exact_product": 2.6755861926095488,
+  "max_absolute_error": 961,
+  "worst_case": {
+    "a": -95,
+    "b": -95,
+    "approx": 8064,
+    "exact": 9025
+  }
+}
