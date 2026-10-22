@@ -6,11 +6,16 @@
  */
 
 module exact_mul_s8 (
-    input  wire signed [7:0] a_i,
-    input  wire signed [7:0] b_i,
-    output wire signed [15:0] p_o
+    input  signed [7:0] a_i,
+    input  signed [7:0] b_i,
+    output signed [15:0] p_o
 );
 
-    assign p_o = a_i * b_i;
+    TheMultiplier baseline_mul_inst (
+        .a(a_i),
+        .b(b_i),
+        .S(p_o)
+    );
 
 endmodule
+ 
