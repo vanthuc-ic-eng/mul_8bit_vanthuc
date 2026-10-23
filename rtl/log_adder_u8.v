@@ -13,6 +13,6 @@ module log_adder_u8 #(
     output wire [LOW_W+6:0] log_sum_o
 );
 
-    assign log_sum_o = { {1'b0, log_a_i[LOW_W+5 : 2]} + {1'b0, log_b_i[LOW_W+5 : 2]}, 2'b00 };
+    assign log_sum_o = {1'b0, log_a_i} + {1'b0, log_b_i};
  
 endmodule
