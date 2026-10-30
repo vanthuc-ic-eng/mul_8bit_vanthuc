@@ -23,7 +23,12 @@ module log_lut_converter_u8 #(
     assign log_frac_o = {high_w, low_w};
 
     generate
-        if (LOW_W == 3) begin : gen_low3
+        if (LOW_W == 2) begin : gen_low2
+            log_lut_low2 u_lut (
+                .addr_i            ( low_addr_w             ),
+                .data_o            ( low_w                  )
+            );
+        end else if (LOW_W == 3) begin : gen_low3
             log_lut_low3 u_lut (
                 .addr_i            ( low_addr_w             ),
                 .data_o            ( low_w                  )

@@ -49,8 +49,10 @@ set_output_delay -clock vclk $io_delay [get_ports {p_o[*]}]
 update_timing
 
 set suffix "${top_name}_low${low_w}"
+report_utilization -hierarchical -file "reports/fpga_util_hier_${suffix}.rpt"
 report_utilization    -file "reports/fpga_util_${suffix}.rpt"
 report_timing_summary -file "reports/fpga_timing_${suffix}.rpt"
 report_timing -delay_type max -max_paths 10 -file "reports/fpga_paths_${suffix}.rpt"
+report_power -file "reports/fpga_power_${suffix}.rpt"
 write_checkpoint -force "build/${suffix}_synth.dcp"
 puts "DONE: $top_name LOW_W=$low_w PART=$part_name DSP48=$dsp_count"
